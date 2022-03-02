@@ -1,0 +1,33 @@
+<p>ClassReview</p>
+
+<p>授業の評価共有サイト</p>
+
+<p>受けた授業を評価する</p>
+
+<%= form_tag("/class/create") do %>
+  <div class="form">
+    <p>評価する</p>
+    <div class="form-body">
+      <% @classwork.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <p>授業名</p>
+      <input name="name" value="初期値">
+      <p>星</p>
+      <select name="star">
+      <option value=1>星1</option>
+      <option value=2>星2</option>
+      <option value=3>星3</option>
+      <option value=4>星4</option>
+      <option value=5>星5</option>
+      </select>
+
+      <p>コメント</p>
+      <textarea name="comment" value="初期値" id="" cols="30" rows="10"></textarea>
+
+      <input type="submit" value="投稿">
+    </div>
+  </div>
+<% end %>

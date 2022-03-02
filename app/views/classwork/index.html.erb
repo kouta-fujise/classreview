@@ -1,0 +1,13 @@
+<p>ClassReview</p>
+
+<p>授業の評価共有サイト</p>
+
+<p>授業評価一覧</p>
+
+<% @classwork.each do |classwork|%>
+  <div class="review-cell">
+    <%= classwork.name%>
+    <%= classwork.star%>
+    <%= classwork.comment%>
+  </div>
+<% end%>
