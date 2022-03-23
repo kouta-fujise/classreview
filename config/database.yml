@@ -50,4 +50,6 @@ test:
 production:
   <<: *default
   host: 10.0.2.10
-  database: rails_todo_tutorial_production
+  database: classreview
+  username: classreview
+  password: classreviewpasswd
