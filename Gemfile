@@ -6,8 +6,8 @@ ruby '2.7.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1' #5.2.4.1以上が必要で5.2.4以上5.2.9までなら動作するが、5.3は不可
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'  herokuデプロイ用
-gem 'mysql2' #awsデプロイ用
+gem 'sqlite3'  # herokuデプロイ用
+# gem 'mysql2' # awsデプロイ用
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -64,7 +64,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# herokuデプロイ用
-# group :production do
-#   gem 'pg'
-# end
+
+group :production do
+#   gem 'pg' # herokuデプロイ用
+  gem 'mysql2' #awsデプロイ用
+  gem 'unicorn', '5.4.1' #AWSデプロイ用
+end
